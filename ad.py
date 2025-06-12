@@ -30,6 +30,7 @@ def intro():
 print("\n")
 def y_or_n():
     while True:
+        print_pause("Game over")
         choose=input("Would you like to play again? (y/n)\n")
 
         while (choose!="y"and choose!="n"):
