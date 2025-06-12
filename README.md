@@ -49,8 +49,4 @@ Welcome to *The Enchanted Adventure Game!* A world of magic, mystery, and daring
 
 ## *Final Words*
 
-<<<<<<< HEAD
 I, The Enchanted Adventure Game, exist to bring adventure, thrill, and fun to you! Whether you win or lose, each journey is unique. Are you ready to test your courage? Step into the world and begin your adventure now! ✨
-=======
-I, The Enchanted Adventure Game, exist to bring adventure, thrill, and fun to you! Whether you win or lose, each journey is unique. Are you ready to test your courage? Step into the world and begin your adventure now! ✨
->>>>>>> 083865535fa0e1d0d3014a05c5a9d6e95d3445b5
