@@ -27,7 +27,7 @@ Welcome to *The Enchanted Adventure Game!* A world of magic, mystery, and daring
 
 - If you don’t reach the goal, you lose but can try again.
 
-- You have a maximum of **7 turns**, so use them wisely!
+- You have a maximum of **4 turns**, so use them wisely!
 
 ## *Game Features*
 
