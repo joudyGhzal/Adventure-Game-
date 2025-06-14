@@ -3,18 +3,24 @@ import random
 import os
 
 # list of characters in the game
-random_characters=["wicked fairie","troll","dragon","pirate","Keres","Andras","Dracula","gorgon"]
+random_characters=["wicked fairie","troll",
+                   "dragon","pirate","Dracula","gorgon"]
 characters=random.choice(random_characters ) # Rondomely select one character
 scoring=0 # Initializes player score
-max_turns=7 # Maximum turns in the game
+max_turns=4 # Maximum turns in the game
 winning_score=25  # Score required to win
 wand=False    # Tracks whether player has obtained a better wand
 turn_count = 1  # Keeps track of turn number across games
-choose="y"or"n"
+colors = ['blue', 'green', 'red', 'purple', 'orange']
+
+# choose a random color for the magic wand: 
+wand_color = random.choice(colors)
+
 # Function to print a message and introduce a delay for better game pacing
 def print_pause(message):
     print(message)
     time.sleep(2)
+
 
 # Function to introduce the player to the game world
 def intro():
@@ -27,15 +33,13 @@ def intro():
     print_pause("Enter 2 to peer into the cave.")
 
 # Function to validate if the player wants to play again
-print("\n")
 def y_or_n():
     while True:
-        print_pause("Game over")
-        choose=input("Would you like to play again? (y/n)\n")
+        choose=input("Would you like to play again? (y/n)\n").strip().lower()
 
-        while (choose!="y"and choose!="n"):
-
-            choose =input("Would you like to play again? (y/n)\n")
+        while choose not in["y","n"]:
+            #validate input
+            choose =input("Would you like to play again? (y/n)\n").strip().lower()
         return choose    
 
 # Function of choices of the game (cave or home)
@@ -71,8 +75,8 @@ def cave():
     print_pause("You peer cautiously into the cave")
     print_pause("It turns out to be only a very small cave.")
     print_pause("Your eye catches a glint of metal behind a rock.")
-    print_pause("You have found the magical Wand of Ogoroth!")
-    print_pause("You discard your rusty old magic wand and take the Wand of Ogoroth with you..")
+    print_pause(f"You have found the magical {wand_color} Wand of Ogoroth!")
+    print_pause(f"You discard your rusty old magic wand and take the {wand_color} Wand of Ogoroth with you..")
     print_pause("You walk back out to the field.") 
     print_pause(f"your score now is {scoring}")
     print_pause("Enter 1 to knock on the door of the house.")
@@ -94,9 +98,12 @@ def success():
     global scoring
     scoring+=10
     print_pause(f"You cast the spell and the {characters} is defeated.")
-    print_pause(f"As the {characters} moves to cast a spell, you raise your new Wand of Ogoroth.")
-    print_pause("The Wand of Ogoroth shines brightly in your hand as you brace yourself for the spell.")
-    print_pause(f"But the {characters} takes one look at your shiny new wand and runs away!")
+    print_pause(f"As the {characters} moves to cast a spell, you raise your new {wand_color} Wand" 
+                " of Ogoroth.")
+    print_pause(f"The {wand_color} Wand of Ogoroth "
+                "shines brightly in your hand as you brace yourself for the spell.")
+    print_pause(f"But the {characters} takes one look at your shiny new {wand_color} wand "
+                "and runs away!")
     print_pause(f"You have rid the town of the {characters}. You are victorious!")
     print_pause(f"your score now is {scoring}")
 
@@ -187,7 +194,7 @@ def riddle_2():
 def riddle_3():
     global scoring
     answer =input("What has a neck but no head, what am i?\n")
-    if answer =="bottle":
+    if answer =="bottle" :
         print_pause("Amazing")
         scoring+=2
 
@@ -209,6 +216,8 @@ selected_riddle = random.choice(random_riddle)
 def play_adventure_game():
     global characters, wand ,scoring ,turn_count
     characters = random.choice(random_characters)
+    selected_riddle = random.choice(random_riddle)
+    wand_color = random.choice(colors)
     wand = False
     scoring=0
     os.system("clear")
