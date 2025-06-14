@@ -6,19 +6,19 @@ Welcome to *The Enchanted Adventure Game!* A world of magic, mystery, and daring
 
 ## *How to Play*
 
-1.You start with a weak, rusty magic wand.
+1. You start with a weak, rusty magic wand.
 
-2.Explore the world:
+2. Explore the world:
 
 - **Enter the house (Option 1)** to meet an unknown character.
 - **Explore the cave (Option 2)** to search for powerful items.
 
 
-3.If you enter the house, you must **choose to fight or run away**.
+3. If you enter the house, you must **choose to fight or run away**.
 
-4.The cave holds treasures, including the **Wand of Ogoroth**, which makes you stronger!
+4. The cave holds treasures, including the **Wand of Ogoroth**, which makes you stronger!
 
-5.You’ll also encounter a **riddle challenge** to earn extra points.
+5. You’ll also encounter a **riddle challenge** to earn extra points.
 
 ## *Scoring and Winning*
 - Defeating enemies and solving riddles increase your **score**.
