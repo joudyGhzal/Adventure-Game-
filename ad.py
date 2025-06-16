@@ -27,13 +27,17 @@ def print_pause(message):
 # Function to introduce the player to the game world
 def intro():
     print_pause(
-        "You find yourself standing in an open field, filled with grass and yellow wildflowers.")
+        "You find yourself standing in an open field, filled with grass "
+        "and yellow wildflowers."
+    )
     print_pause(
-        f"Rumor has it that a {characters} is somewhere around here, and has been terrifying the nearby village")
+        f"Rumor has it that a {characters} is somewhere around here, and has "
+        "been terrifying the nearby village")
     print_pause("In front of you is a house.")
     print_pause("To your right is a dark cave.")
     print_pause(
-        "In your hand you hold your trusty (but not very effective) rusty old magic wand.....")
+        "In your hand you hold your trusty (but not very effective) rusty old "
+        "magic wand.....")
     print_pause("Enter 1 to knock on the door of the house.")
     print_pause("Enter 2 to peer into the cave.")
 
@@ -70,12 +74,15 @@ def house():
     scoring += 5
     print_pause("You approach the door of the house.")
     print_pause(
-        f"You are about to knock when the door opens and out steps a {characters}.")
+        "You are about to knock when the door opens and out steps a "
+        f"{characters}.")
     print_pause(f"Eep! This is the {characters}'s house!")
     print_pause(f"The {characters} finds you!")
-    if wand != True:
+    if not wand:
         print_pause(
-            "You feel a bit under-prepared for this, what with only having a tiny, rusty old magic wand.")
+            "You feel a bit under-prepared for this, "
+            "what with only having a tiny, rusty old magic wand."
+        )
     else:
         print_pause(f"you are now facing the {characters}.")
     print_pause(f"your score now is {scoring}")
@@ -93,7 +100,8 @@ def cave():
     print_pause("Your eye catches a glint of metal behind a rock.")
     print_pause(f"You have found the magical {wand_color} Wand of Ogoroth!")
     print_pause(
-        f"You discard your rusty old magic wand and take the {wand_color} Wand of Ogoroth with you..")
+        f"You discard your rusty old magic wand and take the {wand_color} Wand"
+        " of Ogoroth with you..")
     print_pause("You walk back out to the field.")
     print_pause(f"your score now is {scoring}")
     print_pause("Enter 1 to knock on the door of the house.")
@@ -107,7 +115,8 @@ def cave():
 def cave_again():
     print_pause("You peer cautiously into the cave.")
     print_pause(
-        "You've been here before, and gotten all the good stuff. It's just an empty cave now.")
+        "You've been here before, and gotten all the good stuff. It's just an"
+        "empty cave now.")
     print_pause("You walk back out to the field.")
     print_pause("Enter 1 to knock on the door of the house.")
     print_pause("Enter 2 to peer into the cave.")
@@ -120,11 +129,14 @@ def success():
     global scoring
     scoring += 10
     print_pause(f"You cast the spell and the {characters} is defeated.")
-    print_pause(f"As the {characters} moves to cast a spell, you raise your new {wand_color} Wand"
+    print_pause(f"As the {characters} moves to cast a spell, you raise your"
+                f" new {wand_color} Wand"
                 " of Ogoroth.")
     print_pause(f"The {wand_color} Wand of Ogoroth "
-                "shines brightly in your hand as you brace yourself for the spell.")
-    print_pause(f"But the {characters} takes one look at your shiny new {wand_color} wand "
+                "shines brightly in your hand as you brace yourself for the"
+                " spell.")
+    print_pause(f"But the {characters} takes one look at your shiny new"
+                f" {wand_color} wand "
                 "and runs away!")
     print_pause(
         f"You have rid the town of the {characters}. You are victorious!")
@@ -148,7 +160,8 @@ def failed():
 def run_away():
 
     print_pause(
-        "You run back into the field. Luckily, you don't seem to have been followed.")
+        "You run back into the field. Luckily, you don't seem to have been"
+        " followed.")
     print_pause("Enter 1 to knock on the door of the house.")
     print_pause("Enter 2 to peer into the cave.")
     print_pause("What would you like to do?")
@@ -161,7 +174,7 @@ def house_case():
     house()
     choice = selection()
     if choice == "1":
-        if wand == True:
+        if wand:
             success()
         else:
             failed()
@@ -178,7 +191,7 @@ def house_case():
 
 def cave_case():
     global wand
-    if wand == False:
+    if not wand:
         cave()
     else:
         cave_again()
@@ -231,7 +244,7 @@ def riddle_2():
 
 def riddle_3():
     global scoring
-    answer = input("What has a neck but no head, what am i?\n")
+    answer = input("I have a neck but no head, what am i?\n")
     if answer == "bottle":
         print_pause("Amazing")
         scoring += 2
@@ -258,7 +271,7 @@ selected_riddle = random.choice(random_riddle)
 
 
 def play_adventure_game():
-    global characters, wand, scoring, turn_count
+    global characters, wand, scoring, turn_count, wand_color
     characters = random.choice(random_characters)
     selected_riddle = random.choice(random_riddle)
     wand_color = random.choice(colors)
@@ -293,5 +306,6 @@ def play_adventure_game():
         return
     play_again()
 
-    # Start the game
+
+# Start the game
 play_adventure_game()
